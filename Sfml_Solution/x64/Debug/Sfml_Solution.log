@@ -1,2 +1,13 @@
-﻿  Sfml_Solution.vcxproj -> c:\users\aaron\documents\visual studio 2015\Projects\Sfml_Solution\x64\Debug\Sfml_Solution.exe
-  Sfml_Solution.vcxproj -> c:\users\aaron\documents\visual studio 2015\Projects\Sfml_Solution\x64\Debug\Sfml_Solution.pdb (Partial PDB)
+﻿  NewGameState.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(74): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(75): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(126): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(42): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(43): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(50): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(61): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(67): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(195): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.exe
+  Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.pdb (Partial PDB)
