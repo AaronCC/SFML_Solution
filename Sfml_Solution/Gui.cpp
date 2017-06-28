@@ -3,6 +3,7 @@
 
 #include "Gui.h"
 
+
 sf::Vector2f Gui::getSize()
 {
 	return sf::Vector2f(this->dimensions.x, this->dimensions.y * this->entries.size());
@@ -70,6 +71,14 @@ void Gui::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	return;
 }
 
+void Inventory::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(this->background);
+	for (int r = 0; r < 3; r++)
+		for (int c = 0; c < 3; c++)
+			target.draw(this->equipped[r][c].back);
+}
+
 void Gui::show()
 {
 	sf::Vector2f offset(0.0f, 0.0f);
@@ -85,8 +94,11 @@ void Gui::show()
 		entry.shape.setOrigin(origin);
 		entry.text.setOrigin(origin);
 		/* Compute the position of the entry */
+		sf::Vector2f centerPos = this->getPosition();
+		if (this->style.centered)
+			centerPos.x += (entry.shape.getSize().x / 2) - (entry.text.getLocalBounds().width / 2);
 		entry.shape.setPosition(this->getPosition());
-		entry.text.setPosition(this->getPosition());
+		entry.text.setPosition(centerPos);
 		if (this->horizontal) offset.x += this->dimensions.x;
 		else offset.y += this->dimensions.y;
 	}
@@ -100,6 +112,30 @@ void Gui::show()
 		else offset.y += this->dimensions.y;
 	}
 	return;
+}
+
+void Inventory::show()
+{
+	sf::Vector2f origin = this->getOrigin();
+	sf::Vector2f position = this->getPosition();
+	this->background.setPosition(position);
+	position.x += this->PADD;
+	position.y += this->PADD;
+	for (int r = 0; r < 3; r++)
+	{
+		for (int c = 0; c < 3; c++)
+		{
+			equipped[r][c].back.setOrigin(origin);
+			equipped[r][c].back.setPosition(position);
+			position.x += CELLW;
+		}
+		position.x -= 3 * CELLW;
+		position.y += CELLW;
+	}
+	for (auto& item : this->inventory)
+	{
+
+	}
 }
 
 void Gui::hide()

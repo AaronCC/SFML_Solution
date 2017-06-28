@@ -9,10 +9,6 @@
 #include "Gui.h"
 #include "Tile.h"
 #include "Character.h"
-#include "Knight.h"
-#include "Mage.h"
-#include "Rogue.h"
-#include "Barbarian.h"
 
 class GameState;
 

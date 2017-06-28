@@ -10,6 +10,7 @@ private:
 	Game* game;
 	sf::View view;
 	std::map<const std::string, Gui> guiSystem;
+	//Inventory* inventory;
 	const std::string classes[4] = { "Knight", "Mage", "Rogue", "Barbarian" };
 
 	enum PlayerClass {

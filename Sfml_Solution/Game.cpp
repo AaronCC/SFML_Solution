@@ -21,11 +21,14 @@ void Game::loadTextures()
 {
 	texmgr.loadTexture("hex", "media/Hex.png");
 	texmgr.loadTexture("grass", "media/Grass.png");
+	texmgr.loadTexture("background", "media/Background.png");
 	texmgr.loadTexture("character", "media/Character.png");
 	texmgr.loadTexture("portrait_1", "media/Portrait1.png");
 	texmgr.loadTexture("portrait_2", "media/Portrait2.png");
 	texmgr.loadTexture("portrait_3", "media/Portrait3.png");
 	texmgr.loadTexture("portrait_4", "media/Portrait4.png");
+	texmgr.loadTexture("inv_background", "media/InvBackground.png");
+	texmgr.loadTexture("inv_slot", "media/InvSlot.png");
 }
 
 void Game::loadFonts()
@@ -42,10 +45,10 @@ void Game::loadFonts()
 
 void Game::loadStylesheets()
 {
-	this->stylesheets["button"] = GuiStyle(&this->fonts.at("main_font"), 1,
+	this->stylesheets["button"] = GuiStyle(true, &this->fonts.at("main_font"), 1,
 		sf::Color(0xc6, 0xc6, 0xc6), sf::Color(0x94, 0x94, 0x94), sf::Color(0x00, 0x00, 0x00),
 		sf::Color(0x61, 0x61, 0x61), sf::Color(0x94, 0x94, 0x94), sf::Color(0x00, 0x00, 0x00));
-	this->stylesheets["text"] = GuiStyle(&this->fonts.at("main_font"), 0,
+	this->stylesheets["text"] = GuiStyle(false, &this->fonts.at("main_font"), 0,
 		sf::Color(0x00, 0x00, 0x00, 0x00), sf::Color(0x00, 0x00, 0x00), sf::Color(0xff, 0xff, 0xff),
 		sf::Color(0x00, 0x00, 0x00, 0x00), sf::Color(0x00, 0x00, 0x00), sf::Color(0xff, 0x00, 0x00));
 	return;
@@ -109,11 +112,11 @@ Game::Game()
 	this->window.create(sf::VideoMode(800, 600), "Game");
 	this->window.setFramerateLimit(60);
 
-	characterAtlas.push_back(new Knight());
-	characterAtlas.push_back(new Rogue());
-	characterAtlas.push_back(new Mage());
-	characterAtlas.push_back(new Barbarian());
-	//this->background.setTexture(this->texmgr.getRef("hex"));
+	characterAtlas.push_back(new Character(Character::StartClass::KNIGHT));
+	characterAtlas.push_back(new Character(Character::StartClass::MAGE));
+	characterAtlas.push_back(new Character(Character::StartClass::ROGUE));
+	characterAtlas.push_back(new Character(Character::StartClass::BARBARIAN));
+	this->background.setTexture(this->texmgr.getRef("background"));
 }
 
 Game::~Game()

@@ -7,6 +7,8 @@
 #define PORTRAITS_GUI "portraits"
 #define BUTTON_HEIGHT 25
 
+#define DONE_GUI "done"
+
 #define INFO_GUI "info"
 #define INFO_HEIGHT 25
 
@@ -24,7 +26,7 @@ NewGameState::NewGameState(Game* game)
 
 	selected = NONE;
 
-	sf::Vector2f portraitPos = sf::Vector2f(15, 50);
+	sf::Vector2f portraitPos = sf::Vector2f(30, 50);
 
 	std::map<std::string, std::vector<sf::Texture*>> images;
 	std::vector<sf::Texture*> textures;
@@ -54,33 +56,55 @@ NewGameState::NewGameState(Game* game)
 		std::make_pair("Rogue", classes[ROGUE]),
 		std::make_pair("Barbarian", classes[BARBARIAN])
 	}, {}));
+
 	this->guiSystem.at(CLASS_GUI).setPosition(sf::Vector2f(portraitPos.x, portraitSize.y + portraitPos.y));
 	this->guiSystem.at(CLASS_GUI).setOrigin(0, 0);
 	this->guiSystem.at(CLASS_GUI).show();
 
 	this->guiSystem.emplace(CHOOSE_TEXT_GUI, Gui(sf::Vector2f(portraitSize.x, BUTTON_HEIGHT), 0, true, game->stylesheets.at("text"),
 	{ std::make_pair("Choose your class", CHOOSE_TEXT_GUI) }, {}));
-	this->guiSystem.at(CHOOSE_TEXT_GUI).setPosition(sf::Vector2f(portraitPos.x, portraitPos.x));
+	this->guiSystem.at(CHOOSE_TEXT_GUI).setPosition(sf::Vector2f(portraitPos.x, portraitPos.x / 2));
 	this->guiSystem.at(CHOOSE_TEXT_GUI).setOrigin(0, 0);
 	this->guiSystem.at(CHOOSE_TEXT_GUI).show();
 
-	this->guiSystem.emplace(INFO_GUI, Gui(sf::Vector2f(portraitSize.x, INFO_HEIGHT), 8, false, game->stylesheets.at("text"),
-	{
-		std::make_pair("Class: ", "class_info"),
-		std::make_pair("\nAttack: ", "attack_info"),
-		std::make_pair("\nArmour: ", "armour_info"),
-		std::make_pair("\nCunning: ", "cunning_info"),
-		std::make_pair("\nKnowledge: ", "cunning_info"),
-		std::make_pair("\nMelee: ", "melee_info"),
-		std::make_pair("\nArchery: ", "archery_info"),
-		std::make_pair("\nArmourer: ", "armourer_info"),
-		std::make_pair("\nResistance: ", "resistance_info"),
-		std::make_pair("\nLuck: ", "luck_info"),
-		std::make_pair("\nMysticism: ", "mysticism_info"),
-	}, {}));
+	this->guiSystem.emplace(INFO_GUI, Gui(sf::Vector2f(portraitSize.x, INFO_HEIGHT),
+		8, false, game->stylesheets.at("text"),
+		{
+			std::make_pair("Class: ", "class_info"),
+			std::make_pair("\nAttack: ", "attack_info"),
+			std::make_pair("\nArmour: ", "armour_info"),
+			std::make_pair("\nCunning: ", "cunning_info"),
+			std::make_pair("\nKnowledge: ", "cunning_info"),
+			std::make_pair("\nMelee: ", "melee_info"),
+			std::make_pair("\nArchery: ", "archery_info"),
+			std::make_pair("\nArmourer: ", "armourer_info"),
+			std::make_pair("\nResistance: ", "resistance_info"),
+			std::make_pair("\nLuck: ", "luck_info"),
+			std::make_pair("\nMysticism: ", "mysticism_info"),
+		}, {}));
+
+
 	this->guiSystem.at(INFO_GUI).setPosition(sf::Vector2f(portraitPos.x, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT)));
 	this->guiSystem.at(INFO_GUI).setOrigin(0, 0);
 	this->guiSystem.at(INFO_GUI).show();
+
+	this->guiSystem.emplace(DONE_GUI, Gui(sf::Vector2f(portraitSize.x, INFO_HEIGHT),
+		4, false, game->stylesheets.at("button"),
+		{
+			std::make_pair("Done", "done_button")
+		}, {}));
+
+	this->guiSystem.at(DONE_GUI).setPosition(sf::Vector2f(portraitPos.x + portraitSize.x * 3, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT)));
+	this->guiSystem.at(DONE_GUI).setOrigin(0, 0);
+	this->guiSystem.at(DONE_GUI).show();
+	//sf::Texture& invBack = game->texmgr.getRef("inv_background");
+	//sf::Texture& invSlot = game->texmgr.getRef("inv_slot");
+	//this->inventory = new Inventory(invBack, invSlot);
+
+	/*sf::Vector2u winSize = game->window.getSize();
+	this->inventory->setPosition(winSize.x / 3, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT));
+	this->inventory->setOrigin(0,0);
+	this->inventory->show();*/
 
 }
 void NewGameState::draw(const float dt)
@@ -91,6 +115,7 @@ void NewGameState::draw(const float dt)
 	this->game->window.draw(this->game->background);
 
 	for (auto gui : this->guiSystem) this->game->window.draw(gui.second);
+	//this->game->window.draw(*inventory);
 
 	return;
 }
@@ -199,6 +224,7 @@ void NewGameState::handleInput()
 		case sf::Event::MouseMoved:
 		{
 			this->guiSystem.at(CLASS_GUI).highlight(this->guiSystem.at(CLASS_GUI).getEntry(mousePos));
+			this->guiSystem.at(DONE_GUI).highlight(this->guiSystem.at(DONE_GUI).getEntry(mousePos));
 			break;
 		}
 		/* Click on menu items */
@@ -222,6 +248,10 @@ void NewGameState::handleInput()
 				else if (msg == classes[BARBARIAN]) {
 					setInfoText(BARBARIAN);
 					selected = BARBARIAN;
+				}
+				if (msg == "DONE")
+				{
+
 				}
 				if (msg != "null")
 				{

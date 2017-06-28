@@ -6,6 +6,19 @@
 #include <vector>
 #include <utility>
 #include <string>
+#include "Item.h"
+
+enum SlotType {
+	LEFT_HAND = 0,
+	HEAD = 1,
+	RIGHT_HAND = 2,
+	GLOVES = 3,
+	BODY = 4,
+	CLOAK = 5,
+	ACC1 = 6,
+	FEET = 7,
+	ACC2 = 8
+};
 
 class GuiStyle
 {
@@ -20,11 +33,13 @@ public:
 	sf::Font* font;
 
 	float borderSize;
+	bool centered;
 
-	GuiStyle(sf::Font* font, float borderSize,
+	GuiStyle(bool centered, sf::Font* font, float borderSize,
 		sf::Color bodyCol, sf::Color borderCol, sf::Color textCol,
 		sf::Color bodyHighlightCol, sf::Color borderHighlightCol, sf::Color textHighlightCol)
 	{
+		this->centered = centered;
 		this->bodyCol = bodyCol;
 		this->borderCol = borderCol;
 		this->textCol = textCol;
@@ -76,6 +91,29 @@ public:
 	}
 	GuiImage() { }
 };
+
+class InvSlot {
+public:
+	sf::Sprite back;
+	sf::Vector2f dimensions;
+	SlotType type;
+	Item* item;
+
+	InvSlot() {}
+
+	InvSlot(sf::Texture& back, sf::Vector2f dimensions, SlotType type) {
+		this->dimensions = dimensions;
+		this->back = sf::Sprite(back);
+		this->type = type;
+		this->item = new Item();
+	}
+
+	void Equip(Item& item)
+	{
+		this->item = &item;
+	}
+};
+
 
 class Gui : public sf::Transformable, public sf::Drawable
 {
@@ -159,6 +197,42 @@ public:
 	std::string activate(const sf::Vector2f mousePos);
 
 	void selectOne(const int index);
+};
+class Inventory : public sf::Transformable, public sf::Drawable {
+
+public:
+	int PADD;
+	int CELLW;
+	const sf::Vector2u SIZE = sf::Vector2u(320, 320);
+	InvSlot equipped[3][3];
+	sf::Sprite background;
+	sf::IntRect dimensions;
+
+	//std::map<SlotType, InvSlot> equipped;
+	std::vector<InvSlot> inventory;
+	
+	Inventory() {}
+	Inventory(sf::Texture& background, sf::Texture& back)
+	{
+		this->background = sf::Sprite(background);
+		sf::Vector2u backSize = background.getSize();
+		PADD = 10;
+		CELLW = (backSize.x - (2 * PADD)) / 5;
+		int typeInd = 0;
+		for (int r = 0; r < 3; r++)
+		{
+			for (int c = 0; c < 3; c++)
+			{
+				equipped[r][c] = InvSlot(back, sf::Vector2f(CELLW, CELLW), SlotType(typeInd));
+				typeInd++;
+			}
+		}
+	}
+
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	void show();
+
 };
 
 #endif /* GUI_H */

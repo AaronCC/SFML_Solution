@@ -16,14 +16,14 @@
     <Filter Include="Header Files\Characters">
       <UniqueIdentifier>{1a9b6788-4edf-4b0d-a606-94261b158a60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\NewFilter1">
-      <UniqueIdentifier>{e369dfff-06f8-418b-a3e5-64501610349c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\States">
       <UniqueIdentifier>{3302da25-d841-4a7c-8bce-607146477935}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{91971cf2-37a9-48bd-87d8-60ce3b40b989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Characters">
+      <UniqueIdentifier>{e369dfff-06f8-418b-a3e5-64501610349c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,16 +49,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>Source Files\NewFilter1</Filter>
-    </ClCompile>
-    <ClCompile Include="Barbarian.cpp">
-      <Filter>Source Files\NewFilter1</Filter>
-    </ClCompile>
-    <ClCompile Include="Knight.cpp">
-      <Filter>Source Files\NewFilter1</Filter>
-    </ClCompile>
-    <ClCompile Include="Mage.cpp">
-      <Filter>Source Files\NewFilter1</Filter>
+      <Filter>Source Files\Characters</Filter>
     </ClCompile>
     <ClCompile Include="NewGameState.cpp">
       <Filter>Source Files\States</Filter>
@@ -69,8 +60,8 @@
     <ClCompile Include="StartState.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="Rogue.cpp">
-      <Filter>Source Files\NewFilter1</Filter>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,18 +86,6 @@
     <ClInclude Include="Character.h">
       <Filter>Header Files\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="Mage.h">
-      <Filter>Header Files\Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="Knight.h">
-      <Filter>Header Files\Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="Rogue.h">
-      <Filter>Header Files\Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="Barbarian.h">
-      <Filter>Header Files\Characters</Filter>
-    </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
@@ -118,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="StartState.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
