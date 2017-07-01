@@ -32,7 +32,7 @@ public:
 		MYSTICISM = 6
 	};
 
-	enum StartClass {
+	enum ClassType {
 		KNIGHT,
 		MAGE,
 		ROGUE,
@@ -42,9 +42,11 @@ public:
 	std::map<Feat, Aptitude> feats;
 	std::map<Skill, int> skills;
 	std::string name;
-	Inventory inventory;
+	Inventory* inventory;
+	ClassType type;
 
-	Character(StartClass type);
+	Character(ClassType type);
+	void initInventory(sf::Texture & invBack, sf::Texture & slotBack);
 	void initStats(int att, int def, int cun, int kno, Aptitude mel, Aptitude arc, Aptitude arm, Aptitude res, Aptitude luck, Aptitude mys);
 	~Character();
 };

@@ -6,6 +6,7 @@
 class Item
 {
 public:
+
 	Item();
 	Item(sf::Texture& texture);
 	~Item();

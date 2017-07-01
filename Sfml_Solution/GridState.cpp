@@ -15,18 +15,16 @@ GridState::GridState(Game* game)
 	map = new Map(game);
 }
 
-
-
 void GridState::draw(const float dt)
 {
 	this->game->window.setView(this->gameView);
 	this->map->draw(this->game->window, dt);
 }
 
-
 void GridState::update(const float dt)
 {
 }
+
 void GridState::resizeView(float windowW, float windowH)
 {
 	float windowRatio = windowW / (float)windowH;

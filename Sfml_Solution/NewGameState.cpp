@@ -25,7 +25,11 @@ NewGameState::NewGameState(Game* game)
 	this->view.setCenter(pos);
 
 	selected = NONE;
+	initGui();
+}
 
+void NewGameState::initGui()
+{
 	sf::Vector2f portraitPos = sf::Vector2f(30, 50);
 
 	std::map<std::string, std::vector<sf::Texture*>> images;
@@ -83,7 +87,6 @@ NewGameState::NewGameState(Game* game)
 			std::make_pair("\nMysticism: ", "mysticism_info"),
 		}, {}));
 
-
 	this->guiSystem.at(INFO_GUI).setPosition(sf::Vector2f(portraitPos.x, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT)));
 	this->guiSystem.at(INFO_GUI).setOrigin(0, 0);
 	this->guiSystem.at(INFO_GUI).show();
@@ -97,16 +100,8 @@ NewGameState::NewGameState(Game* game)
 	this->guiSystem.at(DONE_GUI).setPosition(sf::Vector2f(portraitPos.x + portraitSize.x * 3, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT)));
 	this->guiSystem.at(DONE_GUI).setOrigin(0, 0);
 	this->guiSystem.at(DONE_GUI).show();
-	//sf::Texture& invBack = game->texmgr.getRef("inv_background");
-	//sf::Texture& invSlot = game->texmgr.getRef("inv_slot");
-	//this->inventory = new Inventory(invBack, invSlot);
-
-	/*sf::Vector2u winSize = game->window.getSize();
-	this->inventory->setPosition(winSize.x / 3, portraitPos.y + portraitSize.y + (2 * BUTTON_HEIGHT));
-	this->inventory->setOrigin(0,0);
-	this->inventory->show();*/
-
 }
+
 void NewGameState::draw(const float dt)
 {
 	this->game->window.setView(this->view);
@@ -216,7 +211,6 @@ void NewGameState::handleInput()
 		}
 		case sf::Event::Resized:
 		{
-
 			resizeView(event.size.width, event.size.height);
 			break;
 		}
@@ -232,28 +226,29 @@ void NewGameState::handleInput()
 		{
 			if (event.mouseButton.button == sf::Mouse::Left)
 			{
-				std::string msg = this->guiSystem.at(CLASS_GUI).activate(mousePos);
-				if (msg == classes[KNIGHT]) {
+				std::string class_msg = this->guiSystem.at(CLASS_GUI).activate(mousePos);
+				if (class_msg == classes[KNIGHT]) {
 					setInfoText(KNIGHT);
 					selected = KNIGHT;
 				}
-				else if (msg == classes[MAGE]) {
+				else if (class_msg == classes[MAGE]) {
 					setInfoText(MAGE);
 					selected = MAGE;
 				}
-				else if (msg == classes[ROGUE]) {
+				else if (class_msg == classes[ROGUE]) {
 					setInfoText(ROGUE);
 					selected = ROGUE;
 				}
-				else if (msg == classes[BARBARIAN]) {
+				else if (class_msg == classes[BARBARIAN]) {
 					setInfoText(BARBARIAN);
 					selected = BARBARIAN;
 				}
-				if (msg == "DONE")
+				else if (this->guiSystem.at(DONE_GUI).activate(mousePos) == "done_button")
 				{
-
+					this->game->initCharacter(selected);
+					this->game->pushState(new TownState(this->game));
 				}
-				if (msg != "null")
+				if (class_msg != "null")
 				{
 					this->guiSystem.at(INFO_GUI).setEntryText(CLASS_ENTRY, "Class: " + classes[selected]);
 					this->guiSystem.at(CLASS_GUI).selectOne(this->guiSystem.at(CLASS_GUI).getEntry(mousePos));

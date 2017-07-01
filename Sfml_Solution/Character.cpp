@@ -1,6 +1,6 @@
 #include "Character.h"
 
-Character::Character(StartClass type)
+Character::Character(ClassType type)
 {
 	switch (type)
 	{
@@ -17,6 +17,12 @@ Character::Character(StartClass type)
 		initStats(7, 2, 5, 1, BASIC, BASIC, NOVICE, NOVICE, NOVICE, NOVICE);
 		break;
 	}
+	this->type = type;
+}
+
+void Character::initInventory(sf::Texture& invBack, sf::Texture& slotBack)
+{
+	this->inventory = new Inventory(invBack, slotBack);
 }
 
 void Character::initStats(int att, int def, int cun, int kno,
@@ -37,4 +43,5 @@ void Character::initStats(int att, int def, int cun, int kno,
 
 Character::~Character()
 {
+
 }

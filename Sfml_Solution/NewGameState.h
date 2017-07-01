@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "Character.h"
+#include "TownState.h"
 
 class NewGameState : public GameState
 {
@@ -26,14 +27,16 @@ private:
 
 public:
 	virtual void draw(const float dt);
-	virtual void update(const float dt);
+	virtual void update(const float dt); 
+	virtual void handleInput();
 	void resizeView(float windowW, float windowH);
 	std::string aptitudeToString(Character::Aptitude feat);
 	void setInfoText(PlayerClass classType);
-	virtual void handleInput();
+	
 
 
 	NewGameState(Game* game);
+	void initGui();
 };
 
 #endif /* NEW_GAME_STATE_H */

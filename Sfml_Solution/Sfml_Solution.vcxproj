@@ -140,6 +140,7 @@
     <ClCompile Include="StartState.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TownState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationHandler.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="StartState.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="TownState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

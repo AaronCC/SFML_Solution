@@ -208,7 +208,6 @@ public:
 	sf::Sprite background;
 	sf::IntRect dimensions;
 
-	//std::map<SlotType, InvSlot> equipped;
 	std::vector<InvSlot> inventory;
 	
 	Inventory() {}

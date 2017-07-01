@@ -39,6 +39,12 @@ public:
 	std::map<std::string, GuiStyle> stylesheets;
 	std::map<std::string, sf::Font> fonts;
 
+	Character* character;
+
+	void initCharacter(int index)
+	{
+		character = characterAtlas.at(index);
+	}
 	void pushState(GameState* state);
 	void popState();
 	void changeState(GameState* state);

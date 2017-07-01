@@ -112,10 +112,10 @@ Game::Game()
 	this->window.create(sf::VideoMode(800, 600), "Game");
 	this->window.setFramerateLimit(60);
 
-	characterAtlas.push_back(new Character(Character::StartClass::KNIGHT));
-	characterAtlas.push_back(new Character(Character::StartClass::MAGE));
-	characterAtlas.push_back(new Character(Character::StartClass::ROGUE));
-	characterAtlas.push_back(new Character(Character::StartClass::BARBARIAN));
+	characterAtlas.push_back(new Character(Character::ClassType::KNIGHT));
+	characterAtlas.push_back(new Character(Character::ClassType::MAGE));
+	characterAtlas.push_back(new Character(Character::ClassType::ROGUE));
+	characterAtlas.push_back(new Character(Character::ClassType::BARBARIAN));
 	this->background.setTexture(this->texmgr.getRef("background"));
 }
 
