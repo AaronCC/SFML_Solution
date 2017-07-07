@@ -1,0 +1,14 @@
+hex media/Hex.png
+grass media/Grass.png
+background media/Background.png
+character media/Character.png
+portrait_1 media/Portrait1.png
+portrait_2 media/Portrait2.png
+portrait_3 media/Portrait3.png
+portrait_4 media/Portrait4.png
+inv_background media/InvBackground.png
+inv_slot media/InvSlot.png
+test_item media/TestItem.png
+inv_slotH media/InvSlotH.png
+inv_arrowL media/InvArrowL.png
+inv_arrowR media/InvArrowR.png

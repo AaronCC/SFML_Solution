@@ -7,8 +7,6 @@ class StartState : public GameState
 {
 private:
 
-	sf::View view;
-
 	std::map<std::string, Gui> guiSystem;
 
 	void loadgame();

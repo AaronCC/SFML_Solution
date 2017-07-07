@@ -43,10 +43,12 @@ public:
 	std::map<Skill, int> skills;
 	std::string name;
 	Inventory* inventory;
+	std::map<std::string, Gui> guiSystem;
 	ClassType type;
 
 	Character(ClassType type);
-	void initInventory(sf::Texture & invBack, sf::Texture & slotBack);
+	void initInventory(sf::Texture & invBack, sf::Texture & slotBack, sf::Texture & slotBackH, sf::Texture & arrowL, sf::Texture & arrowR);
+	
 	void initStats(int att, int def, int cun, int kno, Aptitude mel, Aptitude arc, Aptitude arm, Aptitude res, Aptitude luck, Aptitude mys);
 	~Character();
 };

@@ -1,5 +1,8 @@
 #include "Game.h"
 #include "GameState.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 void Game::loadTiles()
 {
@@ -19,16 +22,19 @@ void Game::loadTiles()
 }
 void Game::loadTextures()
 {
-	texmgr.loadTexture("hex", "media/Hex.png");
-	texmgr.loadTexture("grass", "media/Grass.png");
-	texmgr.loadTexture("background", "media/Background.png");
-	texmgr.loadTexture("character", "media/Character.png");
-	texmgr.loadTexture("portrait_1", "media/Portrait1.png");
-	texmgr.loadTexture("portrait_2", "media/Portrait2.png");
-	texmgr.loadTexture("portrait_3", "media/Portrait3.png");
-	texmgr.loadTexture("portrait_4", "media/Portrait4.png");
-	texmgr.loadTexture("inv_background", "media/InvBackground.png");
-	texmgr.loadTexture("inv_slot", "media/InvSlot.png");
+	std::string line;
+	std::ifstream texFile("media/Textures.txt");
+	if (texFile.is_open())
+	{
+		while (std::getline(texFile, line))
+		{
+			std::istringstream iss(line);
+			std::vector<std::string> texPair((std::istream_iterator<std::string>(iss)),
+				std::istream_iterator<std::string>());
+			texmgr.loadTexture(texPair[0], texPair[1]);
+		}
+		texFile.close();
+	}
 }
 
 void Game::loadFonts()
@@ -57,7 +63,6 @@ void Game::loadStylesheets()
 void Game::pushState(GameState* state)
 {
 	this->states.push(state);
-
 	return;
 }
 

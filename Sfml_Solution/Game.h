@@ -9,6 +9,7 @@
 #include "Gui.h"
 #include "Tile.h"
 #include "Character.h"
+#include "ItemGenerator.h"
 
 class GameState;
 
@@ -31,6 +32,7 @@ public:
 
 	sf::RenderWindow window;
 	TextureManager texmgr;
+	ItemGenerator itGen;
 	sf::Sprite background;
 
 	std::vector<Character*> characterAtlas;
@@ -41,9 +43,11 @@ public:
 
 	Character* character;
 
-	void initCharacter(int index)
+	void initCharacter(int index, Gui infoGui)
 	{
 		character = characterAtlas.at(index);
+		character->guiSystem.emplace("info", infoGui);
+		character->initInventory(texmgr.getRef("inv_background"), texmgr.getRef("inv_slot"), texmgr.getRef("inv_slotH"), texmgr.getRef("inv_arrowL"), texmgr.getRef("inv_arrowR"));
 	}
 	void pushState(GameState* state);
 	void popState();

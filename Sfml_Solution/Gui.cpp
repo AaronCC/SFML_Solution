@@ -30,6 +30,34 @@ int Gui::getEntry(const sf::Vector2f mousePos)
 	return -1;
 }
 
+InvSlot* Inventory::getInvSlot(const sf::Vector2f mousePos)
+{
+	for (int r = 0; r < 3; r++)
+	{
+		for (int c = 0; c < 3; c++)
+		{
+			sf::Vector2f point = mousePos;
+			point += this->equipped[r][c].back.getOrigin();
+			point -= this->equipped[r][c].back.getPosition();
+			if (point.x < 0 || point.x > this->equipped[r][c].dimensions.x) continue;
+			if (point.y < 0 || point.y > this->equipped[r][c].dimensions.y) continue;
+			return &equipped[r][c];
+		}
+	}
+	for (int i = invAt; i < invAt + 3; i++)
+	{
+		if (i >= inventory.size())
+			break;
+		sf::Vector2f point = mousePos;
+		point += this->inventory[i].back.getOrigin();
+		point -= this->inventory[i].back.getPosition();
+		if (point.x < 0 || point.x > this->inventory[i].dimensions.x) continue;
+		if (point.y < 0 || point.y > this->inventory[i].dimensions.y) continue;
+		return &inventory[i];
+	}
+	return nullptr;
+}
+
 void Gui::setEntryText(int entry, std::string text)
 {
 	if (entry >= entries.size() || entry < 0) return;
@@ -76,7 +104,17 @@ void Inventory::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(this->background);
 	for (int r = 0; r < 3; r++)
 		for (int c = 0; c < 3; c++)
+		{
 			target.draw(this->equipped[r][c].back);
+		}
+	for (int i = invAt; i < invAt + 3; i++)
+	{
+		if (i >= inventory.size())
+			break;
+		target.draw(this->inventory[i].back);
+	}
+	target.draw(arrows.first.back);
+	target.draw(arrows.second.back);
 }
 
 void Gui::show()
@@ -132,10 +170,18 @@ void Inventory::show()
 		position.x -= 3 * CELLW;
 		position.y += CELLW;
 	}
-	for (auto& item : this->inventory)
+	position = this->invPos + this->getPosition();
+	for (int i = invAt; i < invAt + 3; i++)
 	{
-
+		inventory[i].back.setOrigin(origin);
+		inventory[i].back.setPosition(position);
+		position.x += CELLW;
 	}
+	this->arrows.first.back.setOrigin(origin);
+	this->arrows.first.back.setPosition(this->invPos + this->getPosition() - sf::Vector2f(this->CELLW, 0));
+
+	this->arrows.second.back.setOrigin(origin);
+	this->arrows.second.back.setPosition(this->invPos + this->getPosition() + sf::Vector2f(3 * this->CELLW, 0));
 }
 
 void Gui::hide()

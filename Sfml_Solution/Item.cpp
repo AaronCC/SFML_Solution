@@ -1,16 +1,13 @@
 #include "Item.h"
 
-
-
-Item::Item()
+Item::Item(sf::Texture & texture, Quality quality)
 {
-}
-
-Item::Item(sf::Texture & texture)
-{
+	this->invSprite = sf::Sprite(texture);
+	this->quality = quality;
 }
 
 
 Item::~Item()
 {
+
 }

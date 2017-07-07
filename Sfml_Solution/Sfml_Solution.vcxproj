@@ -134,6 +134,7 @@
     <ClCompile Include="GridState.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemGenerator.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="NewGameState.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="GridState.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="NewGameState.h" />
     <ClInclude Include="StartState.h" />

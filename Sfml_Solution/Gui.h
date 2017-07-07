@@ -17,7 +17,9 @@ enum SlotType {
 	CLOAK = 5,
 	ACC1 = 6,
 	FEET = 7,
-	ACC2 = 8
+	ACC2 = 8,
+	INV = 9,
+	ARR = 10
 };
 
 class GuiStyle
@@ -55,7 +57,6 @@ public:
 class GuiEntry
 {
 public:
-
 	bool selected;
 
 	/* Handles appearance of the entry */
@@ -95,25 +96,40 @@ public:
 class InvSlot {
 public:
 	sf::Sprite back;
+	sf::Texture* backT;
+	sf::Texture* backTH;
+
+	bool selected;
+	void Select() {
+		if (selected)
+			this->back.setTexture(*backT);
+		else
+			this->back.setTexture(*backTH);
+		selected = !selected;
+	}
+
 	sf::Vector2f dimensions;
 	SlotType type;
 	Item* item;
 
 	InvSlot() {}
 
-	InvSlot(sf::Texture& back, sf::Vector2f dimensions, SlotType type) {
+	InvSlot(sf::Texture& back, sf::Texture& backH, sf::Vector2f dimensions, SlotType type) {
+		this->selected = false;
 		this->dimensions = dimensions;
 		this->back = sf::Sprite(back);
+		this->backT = &back;
+		this->backTH = &backH;
 		this->type = type;
-		this->item = new Item();
 	}
 
 	void Equip(Item& item)
 	{
 		this->item = &item;
+		this->item->invSprite.setOrigin(this->back.getOrigin());
+		this->item->invSprite.setPosition(this->back.getPosition());
 	}
 };
-
 
 class Gui : public sf::Transformable, public sf::Drawable
 {
@@ -154,7 +170,7 @@ public:
 		shape.setOutlineColor(style.borderCol);
 
 		/* Construct each gui entry */
- 		for (auto entry : entries)
+		for (auto entry : entries)
 		{
 			/* Construct the text */
 			sf::Text text;
@@ -206,27 +222,46 @@ public:
 	const sf::Vector2u SIZE = sf::Vector2u(320, 320);
 	InvSlot equipped[3][3];
 	sf::Sprite background;
-	sf::IntRect dimensions;
-
+	sf::Vector2f invPos;
 	std::vector<InvSlot> inventory;
-	
-	Inventory() {}
-	Inventory(sf::Texture& background, sf::Texture& back)
+	std::pair<InvSlot, InvSlot> arrows;
+	InvSlot* selected;
+	int invAt;
+
+	Inventory(sf::Texture& background, sf::Texture& back, sf::Texture& backH, sf::Texture& arrowL, sf::Texture& arrowR)
 	{
+		invAt = 0;
 		this->background = sf::Sprite(background);
 		sf::Vector2u backSize = background.getSize();
 		PADD = 10;
 		CELLW = (backSize.x - (2 * PADD)) / 5;
 		int typeInd = 0;
+		invPos = sf::Vector2f(PADD + CELLW, PADD + (3.5f * CELLW));
 		for (int r = 0; r < 3; r++)
 		{
 			for (int c = 0; c < 3; c++)
 			{
-				equipped[r][c] = InvSlot(back, sf::Vector2f(CELLW, CELLW), SlotType(typeInd));
+				equipped[r][c] = InvSlot(back, backH, sf::Vector2f(CELLW, CELLW), SlotType(typeInd));
 				typeInd++;
 			}
 		}
+		for (int i = 0; i < 3; i++)
+		{
+			inventory.push_back(InvSlot(back, backH, sf::Vector2f(CELLW, CELLW), INV));
+		}
+		arrows.first = InvSlot(arrowL, arrowL, sf::Vector2f(CELLW, CELLW), ARR);
+		arrows.second = InvSlot(arrowR, arrowR, sf::Vector2f(CELLW, CELLW), ARR);
 	}
+
+	void Select(InvSlot& slot)
+	{
+		if (this->selected != nullptr)
+			this->selected->Select();
+		slot.Select();
+		this->selected = &slot;
+	}
+
+	InvSlot * getInvSlot(const sf::Vector2f mousePos);
 
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

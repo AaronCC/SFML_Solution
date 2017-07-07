@@ -8,8 +8,6 @@
 class NewGameState : public GameState
 {
 private:
-	Game* game;
-	sf::View view;
 	std::map<const std::string, Gui> guiSystem;
 	//Inventory* inventory;
 	const std::string classes[4] = { "Knight", "Mage", "Rogue", "Barbarian" };
@@ -29,11 +27,8 @@ public:
 	virtual void draw(const float dt);
 	virtual void update(const float dt); 
 	virtual void handleInput();
-	void resizeView(float windowW, float windowH);
 	std::string aptitudeToString(Character::Aptitude feat);
 	void setInfoText(PlayerClass classType);
-	
-
 
 	NewGameState(Game* game);
 	void initGui();

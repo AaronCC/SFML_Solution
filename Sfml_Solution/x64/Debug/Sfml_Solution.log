@@ -1,15 +1,107 @@
-﻿  NewGameState.cpp
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(89): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+﻿  TownState.cpp
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(164): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(226): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\townstate.cpp(39): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  StartState.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  NewGameState.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(48): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(49): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(68): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(74): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(95): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(216): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(94): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\newgamestate.cpp(189): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Map.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\map.cpp(41): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\map.cpp(42): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+  Main.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Gui.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.cpp(77): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.cpp(181): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.cpp(184): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GridState.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gridstate.cpp(67): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Game.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Character.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(250): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.exe
   Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.pdb (Partial PDB)

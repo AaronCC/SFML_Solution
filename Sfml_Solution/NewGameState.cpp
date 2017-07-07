@@ -110,7 +110,6 @@ void NewGameState::draw(const float dt)
 	this->game->window.draw(this->game->background);
 
 	for (auto gui : this->guiSystem) this->game->window.draw(gui.second);
-	//this->game->window.draw(*inventory);
 
 	return;
 }
@@ -118,30 +117,6 @@ void NewGameState::draw(const float dt)
 void NewGameState::update(const float dt)
 {
 	return;
-}
-void NewGameState::resizeView(float windowW, float windowH)
-{
-	float windowRatio = windowW / (float)windowH;
-	float viewRatio = this->game->aspectRatio;
-	float sizeX = 1;
-	float sizeY = 1;
-	float posX = 0;
-	float posY = 0;
-
-	bool horizontalSpacing = true;
-	if (windowRatio < viewRatio)
-		horizontalSpacing = false;
-
-	if (horizontalSpacing) {
-		sizeX = viewRatio / windowRatio;
-		posX = (1 - sizeX) / 2.f;
-	}
-	else {
-		sizeY = windowRatio / viewRatio;
-		posY = (1 - sizeY) / 2.f;
-	}
-
-	view.setViewport(sf::FloatRect(posX, posY, sizeX, sizeY));
 }
 
 std::string NewGameState::aptitudeToString(Character::Aptitude aptitude)
@@ -245,7 +220,7 @@ void NewGameState::handleInput()
 				}
 				else if (this->guiSystem.at(DONE_GUI).activate(mousePos) == "done_button")
 				{
-					this->game->initCharacter(selected);
+					this->game->initCharacter(selected, this->guiSystem.at(INFO_GUI));
 					this->game->pushState(new TownState(this->game));
 				}
 				if (class_msg != "null")
