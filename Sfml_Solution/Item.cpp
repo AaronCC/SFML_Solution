@@ -6,7 +6,6 @@ Item::Item(sf::Texture & texture, Quality quality)
 	this->quality = quality;
 }
 
-
 Item::~Item()
 {
 

@@ -47,7 +47,7 @@ public:
 	ClassType type;
 
 	Character(ClassType type);
-	void initInventory(sf::Texture & invBack, sf::Texture & slotBack, sf::Texture & slotBackH, sf::Texture & arrowL, sf::Texture & arrowR);
+	void initInventory(sf::Texture & invBack, sf::Texture & slotBack, sf::Texture & slotBackH);
 	
 	void initStats(int att, int def, int cun, int kno, Aptitude mel, Aptitude arc, Aptitude arm, Aptitude res, Aptitude luck, Aptitude mys);
 	~Character();

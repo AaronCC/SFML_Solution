@@ -44,7 +44,7 @@ InvSlot* Inventory::getInvSlot(const sf::Vector2f mousePos)
 			return &equipped[r][c];
 		}
 	}
-	for (int i = invAt; i < invAt + 3; i++)
+	for (int i = invAt; i < invAt + INV_SIZE; i++)
 	{
 		if (i >= inventory.size())
 			break;
@@ -107,14 +107,14 @@ void Inventory::draw(sf::RenderTarget& target, sf::RenderStates states) const
 		{
 			target.draw(this->equipped[r][c].back);
 		}
-	for (int i = invAt; i < invAt + 3; i++)
+	for (int i = invAt; i < invAt + INV_SIZE; i++)
 	{
 		if (i >= inventory.size())
 			break;
 		target.draw(this->inventory[i].back);
 	}
-	target.draw(arrows.first.back);
-	target.draw(arrows.second.back);
+	//target.draw(arrows.first.back);
+	//target.draw(arrows.second.back);
 }
 
 void Gui::show()
@@ -171,17 +171,24 @@ void Inventory::show()
 		position.y += CELLW;
 	}
 	position = this->invPos + this->getPosition();
-	for (int i = invAt; i < invAt + 3; i++)
+	for (int r = 0; r < this->ROW_COUNT; r++)
 	{
-		inventory[i].back.setOrigin(origin);
-		inventory[i].back.setPosition(position);
-		position.x += CELLW;
+		for (int c = invAt; c < invAt + ROW_SIZE; c++)
+		{
+			inventory[c+(r*this->ROW_SIZE)].back.setOrigin(origin);
+			inventory[c+(r*this->ROW_SIZE)].back.setPosition(position);
+			position.x += CELLW;
+		}
+		position.y += CELLW;
+		position.x -= CELLW * ROW_SIZE;
 	}
+	/*
 	this->arrows.first.back.setOrigin(origin);
 	this->arrows.first.back.setPosition(this->invPos + this->getPosition() - sf::Vector2f(this->CELLW, 0));
 
 	this->arrows.second.back.setOrigin(origin);
 	this->arrows.second.back.setPosition(this->invPos + this->getPosition() + sf::Vector2f(3 * this->CELLW, 0));
+	*/
 }
 
 void Gui::hide()

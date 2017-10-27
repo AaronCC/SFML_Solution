@@ -219,24 +219,29 @@ class Inventory : public sf::Transformable, public sf::Drawable {
 public:
 	int PADD;
 	int CELLW;
+	const int ROW_COUNT = 3;
+	const int ROW_SIZE = 7;
+	const int INV_SIZE = ROW_SIZE * ROW_COUNT;
 	const sf::Vector2u SIZE = sf::Vector2u(320, 320);
 	InvSlot equipped[3][3];
 	sf::Sprite background;
 	sf::Vector2f invPos;
 	std::vector<InvSlot> inventory;
-	std::pair<InvSlot, InvSlot> arrows;
+	
+	//std::pair<InvSlot, InvSlot> arrows;
 	InvSlot* selected;
 	int invAt;
 
-	Inventory(sf::Texture& background, sf::Texture& back, sf::Texture& backH, sf::Texture& arrowL, sf::Texture& arrowR)
+	Inventory(sf::Texture& background, sf::Texture& back, sf::Texture& backH/*, sf::Texture& arrowL, sf::Texture& arrowR*/)
 	{
 		invAt = 0;
 		this->background = sf::Sprite(background);
 		sf::Vector2u backSize = background.getSize();
+		sf::Vector2u slotSize = back.getSize();
 		PADD = 10;
-		CELLW = (backSize.x - (2 * PADD)) / 5;
+		CELLW = (backSize.x - (2 * PADD)) / (backSize.x / slotSize.x);
 		int typeInd = 0;
-		invPos = sf::Vector2f(PADD + CELLW, PADD + (3.5f * CELLW));
+		invPos = sf::Vector2f(PADD, PADD + (4.f * CELLW));
 		for (int r = 0; r < 3; r++)
 		{
 			for (int c = 0; c < 3; c++)
@@ -245,12 +250,14 @@ public:
 				typeInd++;
 			}
 		}
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < INV_SIZE; i++)
 		{
 			inventory.push_back(InvSlot(back, backH, sf::Vector2f(CELLW, CELLW), INV));
 		}
+		/*
 		arrows.first = InvSlot(arrowL, arrowL, sf::Vector2f(CELLW, CELLW), ARR);
 		arrows.second = InvSlot(arrowR, arrowR, sf::Vector2f(CELLW, CELLW), ARR);
+		*/
 	}
 
 	void Select(InvSlot& slot)

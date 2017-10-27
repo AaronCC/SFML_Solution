@@ -47,7 +47,7 @@ public:
 	{
 		character = characterAtlas.at(index);
 		character->guiSystem.emplace("info", infoGui);
-		character->initInventory(texmgr.getRef("inv_background"), texmgr.getRef("inv_slot"), texmgr.getRef("inv_slotH"), texmgr.getRef("inv_arrowL"), texmgr.getRef("inv_arrowR"));
+		character->initInventory(texmgr.getRef("inv_background"), texmgr.getRef("inv_slot"), texmgr.getRef("inv_slotH"));
 	}
 	void pushState(GameState* state);
 	void popState();
