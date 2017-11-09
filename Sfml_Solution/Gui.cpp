@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <string>
-
 #include "Gui.h"
 
 
@@ -67,6 +66,19 @@ void Gui::setEntryText(int entry, std::string text)
 	return;
 }
 
+void Gui::setEntryText(std::string mID, std::string text)
+{
+	if (entries.size() == 0) return;
+	
+	for (int i = 0; i < entries.size(); i++)
+	{
+ 		if (entries[i].message == mID)
+			entries[i].text.setString(text);
+	}
+
+	return;
+}
+
 void Gui::setDimensions(sf::Vector2f dimensions)
 {
 	this->dimensions = dimensions;
@@ -113,8 +125,10 @@ void Inventory::draw(sf::RenderTarget& target, sf::RenderStates states) const
 			break;
 		target.draw(this->inventory[i].back);
 	}
-	//target.draw(arrows.first.back);
-	//target.draw(arrows.second.back);
+	if (selected != nullptr)
+	{
+		infoGui->draw(target, states);
+	}
 }
 
 void Gui::show()
@@ -156,6 +170,7 @@ void Inventory::show()
 {
 	sf::Vector2f origin = this->getOrigin();
 	sf::Vector2f position = this->getPosition();
+	this->worldPos = position;
 	this->background.setPosition(position);
 	position.x += this->PADD;
 	position.y += this->PADD;
@@ -182,13 +197,14 @@ void Inventory::show()
 		position.y += CELLW;
 		position.x -= CELLW * ROW_SIZE;
 	}
-	/*
-	this->arrows.first.back.setOrigin(origin);
-	this->arrows.first.back.setPosition(this->invPos + this->getPosition() - sf::Vector2f(this->CELLW, 0));
-
-	this->arrows.second.back.setOrigin(origin);
-	this->arrows.second.back.setPosition(this->invPos + this->getPosition() + sf::Vector2f(3 * this->CELLW, 0));
-	*/
+	infoGui = new Gui(sf::Vector2f(CELLW, 24),
+		8, false, *textStyle,
+		{
+			std::make_pair("NaN", "selected_type"),
+		}, {});
+	infoGui->setPosition(sf::Vector2f{ worldPos.x + (2*PADD) + (3 * CELLW), worldPos.y + PADD });
+	infoGui->setOrigin(0, 0);
+	infoGui->show();
 }
 
 void Gui::hide()

@@ -2,6 +2,7 @@
 #define BUTTON_GUI "button_gui"
 #define BUTTON_HEIGHT 35
 #define BUTTON_WIDTH 175
+#define INV_SELECTED_ITEM this->game->character->inventory->selected->item
 
 void TownState::draw(const float dt)
 {
@@ -51,6 +52,7 @@ void TownState::handleInput()
 			if (event.mouseButton.button == sf::Mouse::Left)
 			{
 				std::string buttonMsg = this->guiSystem.at(BUTTON_GUI).activate(mousePos);
+				InvSlot* invSlot = nullptr;
 				if (buttonMsg == "skills_button")
 				{
 					this->selected = SKILLS;
@@ -63,12 +65,16 @@ void TownState::handleInput()
 				{
 					this->guiSystem.at(BUTTON_GUI).selectOne(this->guiSystem.at(BUTTON_GUI).getEntry(mousePos));
 				}
-
-				InvSlot* invSlot = this->game->character->inventory->getInvSlot(mousePos);
-				if (invSlot != nullptr)
+				if (this->selected == INVENTORY)
 				{
-					this->game->character->inventory->Select(*invSlot);
+					invSlot = this->game->character->inventory->getInvSlot(mousePos);
+					if (invSlot != nullptr)
+					{
+						this->game->character->inventory->Select(*invSlot);
+						
+					}
 				}
+				
 			}
 			break;
 		}

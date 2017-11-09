@@ -1,10 +1,11 @@
-﻿  Gui.cpp
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(90): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(91): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(180): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(243): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(248): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(254): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.cpp(77): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+﻿  TownState.cpp
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(92): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(93): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(181): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(258): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\gui.h(264): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\tile.h(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\sfml_solutions\sfml_solution\sfml_solution\townstate.cpp(40): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.exe
   Sfml_Solution.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\SFML_SOLUTIONS\SFML_Solution\x64\Debug\Sfml_Solution.pdb (Partial PDB)

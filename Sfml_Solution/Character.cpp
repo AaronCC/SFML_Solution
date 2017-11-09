@@ -20,9 +20,9 @@ Character::Character(ClassType type)
 	this->type = type;
 }
 
-void Character::initInventory(sf::Texture& invBack, sf::Texture& slotBack, sf::Texture& slotBackH/*, sf::Texture& arrowL, sf::Texture& arrowR*/)
+void Character::initInventory(sf::Texture& invBack, sf::Texture& slotBack, sf::Texture& slotBackH, GuiStyle* textStyle)
 {
-	this->inventory = new Inventory(invBack, slotBack, slotBackH);
+	this->inventory = new Inventory(invBack, slotBack, slotBackH, textStyle);
 }
 
 void Character::initStats(int att, int def, int cun, int kno,

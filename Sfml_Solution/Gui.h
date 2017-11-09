@@ -22,6 +22,8 @@ enum SlotType {
 	ARR = 10
 };
 
+
+
 class GuiStyle
 {
 public:
@@ -111,9 +113,7 @@ public:
 	sf::Vector2f dimensions;
 	SlotType type;
 	Item* item;
-
 	InvSlot() {}
-
 	InvSlot(sf::Texture& back, sf::Texture& backH, sf::Vector2f dimensions, SlotType type) {
 		this->selected = false;
 		this->dimensions = dimensions;
@@ -121,6 +121,7 @@ public:
 		this->backT = &back;
 		this->backTH = &backH;
 		this->type = type;
+		this->item = nullptr;
 	}
 
 	void Equip(Item& item)
@@ -194,6 +195,7 @@ public:
 
 	/* Change the text of an entry */
 	void setEntryText(int entry, std::string text);
+	void setEntryText(std::string mID, std::string text);
 
 	/* Change the entry dimensions */
 	void setDimensions(sf::Vector2f dimensions);
@@ -226,15 +228,22 @@ public:
 	InvSlot equipped[3][3];
 	sf::Sprite background;
 	sf::Vector2f invPos;
+	sf::Vector2f worldPos;
 	std::vector<InvSlot> inventory;
 	
+	std::vector<std::string> SlotToString = { "Left Hand","Head","Right Hand", "Gloves", "Body", "Cloak", "Accessory 1", "Feet", "Accessory 2", "Inventory", "ARR" };
+
+	Gui* infoGui;
+	GuiStyle* textStyle;
+
 	//std::pair<InvSlot, InvSlot> arrows;
 	InvSlot* selected;
 	int invAt;
 
-	Inventory(sf::Texture& background, sf::Texture& back, sf::Texture& backH/*, sf::Texture& arrowL, sf::Texture& arrowR*/)
+	Inventory(sf::Texture& background, sf::Texture& back, sf::Texture& backH, GuiStyle* style)
 	{
 		invAt = 0;
+		textStyle = style;
 		this->background = sf::Sprite(background);
 		sf::Vector2u backSize = background.getSize();
 		sf::Vector2u slotSize = back.getSize();
@@ -252,12 +261,8 @@ public:
 		}
 		for (int i = 0; i < INV_SIZE; i++)
 		{
-			inventory.push_back(InvSlot(back, backH, sf::Vector2f(CELLW, CELLW), INV));
+			inventory.push_back(InvSlot(back, backH, sf::Vector2f(CELLW, 12), INV));
 		}
-		/*
-		arrows.first = InvSlot(arrowL, arrowL, sf::Vector2f(CELLW, CELLW), ARR);
-		arrows.second = InvSlot(arrowR, arrowR, sf::Vector2f(CELLW, CELLW), ARR);
-		*/
 	}
 
 	void Select(InvSlot& slot)
@@ -266,6 +271,7 @@ public:
 			this->selected->Select();
 		slot.Select();
 		this->selected = &slot;
+		this->infoGui->setEntryText("selected_type", SlotToString[(int)selected->type]);
 	}
 
 	InvSlot * getInvSlot(const sf::Vector2f mousePos);
